@@ -118,8 +118,8 @@ $(document).ready(
   $(".list_sub_wrap").hide();
   //a를 클릭하면 실행하시오(클릭한a의 다음에 오는 p를 slideDown()시키고 다른p는 hide시키시오)
   $(".family_btn").click(function(){
-        $("ul").slideUp(); //접기
-        $("ul").slideToggle();
+        $(".f_list").slideUp(); //접기
+        $(".f_list").slideToggle();
       });
   }
 );

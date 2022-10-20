@@ -88,8 +88,6 @@
   .header_inner ul.gnb:hover ul.sub{display: none;}
 
   /*비주얼 height 좀만 줄이기*/
-  .swiper-wrapper{height: 650px;}
-
   .bg{height: 750px;}
   /*돋보기, 마이페이지 없애기*/
   .header_inner .tnb .search,.header_inner .tnb .mypage{display: none;}

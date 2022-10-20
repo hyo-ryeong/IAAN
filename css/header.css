@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+
+
+/***** header ******/
+.header_container{
+  position: relative; width: 100%;
+  top : 0; left : 0;  
+  z-index: 9999;
+}
+
+
+ /* header{
+  width : 100%; height: 1200px; margin: 0 auto;
+  background: url('../img/visual.jpg') fixed center center / cover;}
+ animation-name: bgscale;
+  animation-duration: 5s;
+  animation-fill-mode: foward;
+  animation-timing-function: ease;
+  animation-direction :alternate;
+}
+header .bg{
+  width : 100%; height: auto;
+  
+}
+@keyframes bgscale{
+  0%{
+    transform : scale(1.2);
+  }
+  100%{
+    transform : scale(1);
+  }
+}
+*/
+.header_inner{
+  position: fixed; top : 0; left: 0;
+  display: flex; justify-content: space-between;
+  width : 100%; height: 80px;
+  transition: all 0.7s;
+  z-index: 9999;
+}
+
+#header_wrap.scroll {
+  background:#003744;
+  color:#000;
+}
+
+.down {
+  background-color:#003744;
+  -webkit-transition-duration:0.4s;
+  -webkit-transition-timing-function:ease;
+  transition-duration:0.4s;
+  transition-timing-function:ease;
+  z-index: 9999;
+}
+
+.header_inner h1{ margin : 10px 0 0 50px; }
+.header_inner:hover h1 img{
+  display: none;
+}
+/*호버했을 때 로고 바뀌기*/
+.header_inner h1 a::after{
+  content: "";
+  display: none;
+  background: url(../img/logo_ori.svg) center center /contain no-repeat;
+  z-index: 10;
+  width : 100px;
+  height: 35px;
+  padding : 10px 0;
+}
+.header_inner:hover h1 a::after{
+  display: block;
+}
+
+/*호버했을 때 gnb 글씨색깔 바뀌기*/
+.header_inner:hover ul.gnb a{
+ color : #000;
+}
+
+/*호버했을 때 돋보기,사람 이미지 검정색으로 바꾸기*/
+ .header_inner:hover .tnb img{
+  display: none;
+ }
+ .header_inner:hover .tnb{
+  padding : 20px 0;
+  line-height: 60px;
+ }
+ .header_inner:hover .tnb .search::after{
+  content: "";
+  display: block;
+  background: url('../img/search_b.png') center center /contain no-repeat;
+  z-index: 10;
+  padding-top : 10px;
+  width : 20px;
+  height: 20px;
+ }
+ .header_inner:hover .tnb .mypage::after {
+  content: "";
+  display: block;
+  background: url('../img/person_b.png') center center /contain no-repeat;
+  z-index: 11;
+  width : 28px;
+  height: 28px;
+ }
+ .header_inner:hover .tnb .search::after{
+  display: block;
+  
+ }
+ .header_inner:hover .tnb  .mypage::after{
+  display: block;
+
+ }
+ /*호버했을 때 메뉴 내려오기*/
+.header_inner:hover::before{
+  height : 500px;
+  
+}
+.header_inner:hover::after{
+  height: 80px;
+}
+
+.header_inner::before{
+  content: "";
+  position: absolute;
+  width : 100%;
+  height: 0px;
+  top : -80px;
+  background-color: #f8f8f8;
+  z-index: -1;
+  transition: all 0.7s ease-out;
+}
+.header_inner::after{
+  content: "";
+  position: absolute;
+  width : 100%;
+  height: -80px;
+  background-color: #fff;
+  z-index: -1;
+  transition: all 0.7s;
+}
+/*gnb*/
+.menu_conatainer {
+  text-align:center;  z-index: 999;
+}
+ul.gnb{
+  display: flex; justify-content: space-around;
+  width : 500px; text-align: center; 
+}
+ul.gnb li{
+  width: 100%;
+}
+ul.gnb a{
+  line-height: 80px;
+  color : #fff; font-weight: bold;
+  font-size: 20px;
+  
+}
+ul.gnb:hover>ul.sub{
+  display: block;
+}
+ /******서브메뉴******/
+
+  ul.gnb:hover ul.sub{
+  opacity: 0;
+  animation-name: gnbfadein;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  margin-top: 27px;
+}
+@keyframes gnbfadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+ ul.sub{
+  display: none;
+ }
+
+ .header_inner::before:hover li ul.sub{ display: block;}
+ .header_inner::after:hover li ul.sub{ display: block;}
+ ul.gnb:hover li ul.sub{
+ display: block;
+ }
+ ul.gnb:hover ul.sub{
+  opacity: 0;
+  animation-name: gnbfadein;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.25s;
+  margin-top: 10px;
+}
+@keyframes gnbfadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+ ul.gnb:hover li ul.sub li{
+  transition: all 0.7s;
+  height: 50px;
+ }
+ ul.gnb:hover li ul.sub li a{
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color : rgb(83, 83, 83);
+ }
+ ul.gnb:hover li ul.sub li:hover a{
+  color : #8bb929;
+ }
+.tnb{
+  display: flex; justify-content: space-between;
+  width : 70px;
+  margin-right: 50px;
+}
+.tnb a{
+  line-height: 60px;
+}
+.tnb .search img{
+  width : 20px;
+}
+.tnb .mypage img{
+  width : 30px;
+}
+
+
+/* 모바일 반응형 햄버거 버튼*/
+.m_menuBtn{
+  display:none;
+  position: absolute;
+  right : 35px; top : 30px;
+  width : 40px; height: 40px;
+  z-index: 99;
+}
+.m_menuBtn span{
+  position: absolute;
+  width : 100%; height: 5px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.m_menuBtn_line1 { top:6px; }
+.m_menuBtn_line2 { top:18px; }
+.m_menuBtn_line3 { top:30px; }
+
+.m_menuBtn.on .m_menuBtn_line1 { 
+  transform:rotate(45deg);
+  top:10px; 
+}
+.m_menuBtn.on .m_menuBtn_line2{ display: none;}
+.m_menuBtn.on .m_menuBtn_line3 { 
+  transform:rotate(-45deg);
+  top:10px; 
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="60" viewBox="0 0 30 60">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="30" height="60" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="반복_그리드_1" data-name="반복 그리드 1" clip-path="url(#clip-path)">
+    <g transform="translate(-691.872 -1239.528)">
+      <path id="Icon_material-keyboard-arrow-right" data-name="Icon material-keyboard-arrow-right" d="M22.759,61.575l22.9-22.95-22.9-22.95-.36-7.05,30,30-30,30Z" transform="translate(669.473 1230.903)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

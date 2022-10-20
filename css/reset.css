@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+* { 
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+header, main, section, aside, article, footer, nav, menu, details,figure, figcaption {
+  display: block;
+}
+li { 
+  list-style: none;
+}
+a { 
+  text-decoration: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+/*애니메이션*/
+.fadeInUp{
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+}
+@keyframes fadeInUp{
+  0%{ opacity: 0;
+  transform: translate3d(0,60px,0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    visibility: visible;
+  }
+}

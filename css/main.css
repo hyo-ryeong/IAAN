@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+
+header{
+  width : 100%; height: 100%; margin: 0 auto;
+  margin-bottom: -15px;
+  position: relative;
+}
+.bg{
+  position: absolute; 
+  width : 100%; height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  animation-name: grow;
+  animation-duration: 2s;
+  animation-direction: reverse;
+  animation-timing-function: ease-in-out;
+  z-index: -99;
+}
+.visual_img_wrap{ width : 100%; height: 100%;}
+.bg img{ height: 100vh; width: 100%; object-fit: cover;}
+.swiper-button-next::after,
+.swiper-button-prev::after {color: #fff; }
+
+@keyframes grow{
+  0%{
+    opacity: 1;
+    transform:scaleX(1);
+  }
+  20%{
+    opacity: 1;
+    transform:scaleX(1);
+  }
+  100%{
+    opacity: 0.7;
+    transform:scaleX(1.2);
+  }
+}
+
+/*비쥬얼*/
+
+.visual{
+  position: absolute;
+  top : 50%; left : 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  width : 100%;
+
+}
+
+.visual p:nth-child(2){
+  color : #fff;
+  font-size: 43px;
+  
+  display: block; /*block이 아니면 애니메인션이 먹지 않는다. why? inline의 속성 : 다른 사람을 밀칠 수 없다*/
+  animation-name: pup;
+  animation-duration: 2s;
+  animation-direction: reverse;
+  animation-timing-function: ease-in-out;
+}
+.visual p:nth-child(3){
+  color : #fff;
+  font-size: 43px;
+  
+  display: block; /*block이 아니면 애니메인션이 먹지 않는다. why? inline의 속성 : 다른 사람을 밀칠 수 없다*/
+  animation-name: pup;
+  animation-duration: 2.5s;
+  animation-direction: reverse;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pup{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20%{
+    transform: translateY(-20%);
+    opacity: 0.4;
+  }
+  50%{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0;/*h2자체의 기준으로 이동이 된다.*/
+  }
+}
+.visual .bold{
+  font-weight: bold;
+}
+
+/*비쥬얼 slide 화살표*/
+.arrow{
+  width: 25%; height : 20px; margin : 0 auto;
+  display: flex;  justify-content: space-around; position: relative; align-items: center;
+  margin-top: 20px;
+}
+.arrow img{ width : 10px; height: 15px;  }
+.arrow p{ 
+  
+  color : #fff; font-weight: bold; padding : 0 50px;}
+.arrow .prev{ }
+.arrow .prev:after{
+  display: block; position: absolute;
+  content: "";
+  background-image: url('../img/loading_bar.png');
+  width : 80px;
+  height: 2px;
+  top : 50%; left : 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+/*비쥬얼 맨밑에 스크롤*/
+.scroll{
+  position: absolute;
+  top : 90%; left : 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  height: 30px;
+  z-index: 9999;
+}
+.scroll p{
+  color : #fff;
+  margin-bottom: 15px;
+
+  
+}
+.scroll img{
+  width : 23px;
+  animation-name: scrollani1;
+  animation-duration: 1.5s;
+  animation-fill-mode: foward;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction :alternate;
+}
+@keyframes scrollani1{
+  0% {opacity: 0;  transform: translateY(0%);}
+  50% {opacity: 1;  transform: translateY(100%);}
+  100% {opacity: 1;  transform: translateY(100%);}
+}
+
+/********아파트********/
+.aprt_container{
+  width : 100%; height: 100vh;
+  display: flex; 
+}
+.swiper-container{display: block;}
+.swiper-wrapper{width: 100%;}
+.aprt_container section{ transition: all 0.7s; }
+.aprt_container section:hover{ box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7); }
+.aprt1{
+  position: relative;
+  width: 25%; height: auto;
+  background: url('../img/aprt1.png') no-repeat center center/cover;
+  color : #fff; 
+}
+.aprt_txt{
+  position: absolute;
+  top :50%; left : 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  width : 100%;
+  height: 600px;
+  padding : 60px;
+  z-index: 99;
+}
+.aprt_txt h6{
+  font-weight: normal;
+  font-size: 14px;
+  border : 1px solid #fff;
+  padding : 10px 20px;
+  width : 100px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.aprt_txt h3{
+  margin-top: 30px;
+  font-size: 26px;
+}
+.aprt_txt p{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.aprt_txt a{
+  border : 1px solid #fff;
+  padding : 10px 20px;
+  width : 100px;
+  color : #fff;
+  transition: all 0.7s;
+}
+.aprt_txt a:hover{
+  background-color: #003844;
+  border : 1px solid #003744;
+}
+
+.aprt_txt .a_btn{
+  margin-top: 100px;
+}
+.aprt2{
+  position: relative;
+  width: 25%;height: auto;
+  background: url('../img/aprt2.png') no-repeat center center/cover;
+  color : #fff;
+}
+.aprt3{
+  position: relative;
+   width: 25%; height: auto;
+background: url('../img/aprt3.png') no-repeat center center/cover;
+color : #fff;
+}
+.aprt4{
+  position: relative;
+   width: 25%;height: auto;
+background: url('../img/aprt4.png') no-repeat center center/cover;
+color : #fff;
+}
+/*아파트 스와이퍼 */
+
+/**********************SNS*******************/
+.sns_container{
+  position: relative;
+  width : 100%; height: 900px;
+  background: url('../img/sns.jpg') fixed center center / cover;
+}
+.sns_container .inner{ width : 1000px;}
+.sns_txt{
+
+  margin : 30px 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  width : 100%;
+}
+.sns_txt h3{
+  font-size: 40px;
+  font-weight: normal;
+  margin-top : 20px;
+}
+.sns_txt p{
+  margin-top : 20px;
+  color : #666;
+  line-height: 1.5;
+  letter-spacing: 1.2;
+}
+
+.sns{
+  position: absolute;
+  display: flex; justify-items: center;
+  gap: 20px;
+  top : 50%; left : 50%;
+  transform: translate(-50%, -50%);
+  width : 1000px;
+  transition: all 0.7s;
+}
+.sns img{ width : 340px;}
+
+/***************커뮤니티*************/
+.commu_container{
+  width : 100%; height: 1000px;
+  display: flex;
+  text-align: left; color : #fff;
+}
+.text_area{
+  padding: 75px 65px;
+}
+.text_area h3{
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 13px;
+}
+.text_area p{
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.text_area ul{
+  margin-top: 55px;
+  font-size: 19px;
+  line-height: 2;
+}
+.commu_container ul a{color : #fff;}
+.commu_left{
+  width : 50%;
+  height: 100%;
+}
+.notice{
+  width : 100%;
+  height: 100%;
+  background: url('../img/1.jpg') center center / cover;
+}
+.commu_right{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.faq{
+  width : 100%; height: 100%;
+  background: url('../img/faq.jpg') center center/ cover;
+}
+.about{
+  width : 100%; height: 100%;
+  background: url('../img/about.jpg') center center/ cover;
+}
+
+@media(max-width:768px) {
+  header{ height: 750px; transition: all 0.5s;}
+}
